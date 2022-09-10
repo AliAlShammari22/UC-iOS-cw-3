@@ -25,7 +25,7 @@ struct ContentView: View {
                 .resizable()
                 .frame(width: 200, height: 200)
                 .scaledToFit()
-                .padding(50)
+                .padding()
             TextField("ادخل درجتك", text: $dg)
                 .multilineTextAlignment(.center)
                 .frame(width: 400, height: 50)
@@ -44,7 +44,7 @@ struct ContentView: View {
                         good = "ممتاز"
                         }
                     else if (Double(dg) ?? 0 ) >= 80{
-                        good = "جيد جدا"
+                        good = "جيد جدًا"
                         }
                     else if (Double(dg) ?? 0 ) >= 70{
                         good = "جيد"
@@ -61,12 +61,15 @@ struct ContentView: View {
                     }
                 .padding()
                 .onLongPressGesture{
-                    good = "-"
+                    good = "ادخل الدرجة مجددًا"
                 }
             Text("لقد حصلت على درجة")
                 .font(.largeTitle)
+                .padding()
             Text(good)
                 .font(.largeTitle)
+                .padding()
+                .frame(width: 390, height: 200)
             
                 }
         }
