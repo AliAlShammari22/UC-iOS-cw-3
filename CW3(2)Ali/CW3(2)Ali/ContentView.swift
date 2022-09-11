@@ -10,11 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack{
-            ExtractedView()
+            ExtractedView(three: "استغفر الله العظيم")
                 .padding()
-            ExtractedView2()
+            ExtractedView(three: "سبحان الله وبحمده" )
                 .padding()
-            ExtractedView3()
+            ExtractedView(three: "سبحان الله العظيم")
                 .padding()
         }
     }
@@ -27,10 +27,11 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct ExtractedView: View {
+    var three: String
     @State var count1 = 0
     var body: some View {
         HStack{
-            Text("استغفر الله العظيم")
+            Text(three)
                 .font(.largeTitle)
                 .padding()
                 .frame(width: 280)
@@ -46,41 +47,5 @@ struct ExtractedView: View {
     }
 }
 
-struct ExtractedView2: View {
-    @State var count2 = 0
-    var body: some View {
-        HStack{
-            Text("سبحان الله و بحمده")
-                .font(.largeTitle)
-                .padding()
-            Text("\(count2)")
-                .font(.largeTitle)
-                .frame(width: 60, height: 60)
-                .background(.green)
-                .clipShape(Circle())
-                .onTapGesture {
-                    count2 += 1
-                }
-        }
-    }
-}
 
-struct ExtractedView3: View {
-    @State var count3 = 0
-    var body: some View {
-        HStack{
-            Text("سبحان الله العظيم")
-                .font(.largeTitle)
-                .padding()
-                .frame(width: 280)
-            Text("\(count3)")
-                .font(.largeTitle)
-                .frame(width: 60, height: 60)
-                .background(.green)
-                .clipShape(Circle())
-                .onTapGesture {
-                    count3 += 1
-                }
-        }
-    }
-}
+
